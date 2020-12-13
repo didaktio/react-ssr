@@ -4,7 +4,7 @@ A [Simple React Clock](https://github.com/didaktio/react-clock), utilising:
 * [Server-Side Rendering](https://css-tricks.com/server-side-react-rendering/) (SSR)
 * Customised [Webpack](https://webpack.js.org/configuration/)
 * [TypeScript](https://create-react-app.dev/docs/adding-typescript/) EVERYWHERE
-* [Environment Variables](https://create-react-app.dev/docs/adding-custom-environment-variables/) ([done properly](https://stackoverflow.com/questions/55185601/webpack-process-env-undefined-using-defineplugin-and-dotenv/65264701#65264701)).
+* [Environment Variables](https://create-react-app.dev/docs/adding-custom-environment-variables/) ([done properly](https://stackoverflow.com/questions/55185601/webpack-process-env-undefined-using-defineplugin-and-dotenv/65264701#65264701))
 * [SCSS](https://sass-lang.com/) (Dart SASS)
 * [Hooks](https://reactjs.org/docs/hooks-intro.html)
 * ['State Lifting'](https://reactjs.org/docs/lifting-state-up.html)
@@ -20,9 +20,9 @@ A [Simple React Clock](https://github.com/didaktio/react-clock), utilising:
      (see Buttons component in `Clock.tsx`)
 
 
-You might compare the performance of this deployment with the [non-SSR deployment](https://react-clock-ssr.herokuapp.com) (using eg [Chrome Lighthouse](https://developers.google.com/web/tools/lighthouse) or [WebPageTest](https://www.webpagetest.org)).
+You might compare the performance of this deployment with the [non-SSR deployment](https://react-clock.didakt.io) (using eg [Chrome Lighthouse](https://developers.google.com/web/tools/lighthouse) or [WebPageTest](https://www.webpagetest.org)).
 
-**LIVE**: https://react-clock-ssr.herokuapp.com/
+**LIVE**: https://react-clock-ssr.herokuapp.com \
 (Uncached): https://react-clock-ssr.herokuapp.com/?noCache=true
 
 
@@ -42,7 +42,7 @@ You might compare the performance of this deployment with the [non-SSR deploymen
         * Set the entry point to the app entry file (`index.tsx`).
         * Name the output file as `bundle.js`.
     - `mode` is set to 'production' to ensure an build stripped of all but the necessary.
-    - Optionally, Webpack will watch for changes if the WATCH environment variable is present.
+    - Optionally, Webpack will watch for changes if the `WATCH` environment variable is present.
 4. Running `npm start` does the following:
     1. Copies everything from `public` directory to the `server-build` directory.
     2. Copies `server-index.html` to `server-build` and renames it to `index.html`.
@@ -86,3 +86,8 @@ For those who want to use `react-scripts` the following configurations are inclu
 * React (react-scripts) complains about webpack version: install the recommended version of webpack to the devDependencies (as of 11/12/2020, it is 4.44.2).
 * Node complains of files not existing when running server app: ensure you're running the app from the `deployment` directory.
 * Node/Webpack `... is not defined`: webpack watch uses cache which can be troublesome because. Run `npm cache clear -f` and retry.
+
+###### Environment Info
+Node: 14.15.1\
+npm: 6.14.9\
+Heroku CLI: 7.47.4
